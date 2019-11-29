@@ -13,17 +13,14 @@
                 <p class="panel-heading">
                     Profile
                 </p>
-
-            <figure class="image is-128x128">
-                <img src="">
-            </figure>
             </ul>
-
 
             <ul class="panel">
                 <p class="panel-heading">
                     Friends List
                 </p>
+
+                <a href="/friend"><p>View friend list</p></a>
             </ul>
 
         </div>
@@ -34,6 +31,7 @@
                 <p class="panel-heading">
                     Recent Tracks
                 </p>
+                <a href="/tracker"><p>View Tracker list</p></a>
             </ul>
         </div>
     </div>

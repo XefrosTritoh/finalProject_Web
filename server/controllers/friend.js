@@ -1,5 +1,5 @@
 const express = require('express');
-const friend = require('../models/friends')
+const { friend } = require('../models/friends')
 
 const app = express.Router();
 

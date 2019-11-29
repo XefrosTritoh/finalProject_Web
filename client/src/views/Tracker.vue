@@ -60,11 +60,11 @@
 </template>
 
 <script>
-import { TrackClient } from '../models/Tracker';
+import { TrackServer } from '../models/Tracker';
 
 export default {
   data: () => ({
-    posts: TrackClient,
+    posts: TrackServer,
     name: '',
     msg: '',
     Name: '',
@@ -78,10 +78,10 @@ export default {
           icon: 'exclamation-circle',
         });
       } else {
-        const name = document.getElementById('Name').value;
-        const msg = document.getElementById('Message').value;
-        const input = { name, msg };
-        TrackClient.addToTracker(input);
+        //  const name = document.getElementById('Name').value;
+        //  const msg = document.getElementById('Message').value;
+        //  const input = { name, msg };
+        TrackServer.addToTracker();
       }
     },
   },

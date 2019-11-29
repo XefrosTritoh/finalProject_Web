@@ -1,5 +1,5 @@
 const express = require('express');
-const track = require('../models/tracks')
+const { track } = require('../models/tracks')
 
 const app = express.Router();
 //instance of router

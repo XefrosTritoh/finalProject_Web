@@ -30,28 +30,44 @@
             </div>
         </div>
 
+<div class="column is-one-half"><!--Search bar-->
+<ul>
+
 
         <div class="column is-one-quarter"><!--Search bar-->
-
             <div class="control">
-                <input class="input" type="text" placeholder="Find a Friend">
+                <input class="input" type="text" placeholder="ID number">
             </div>
 
             <div class="control">
-                <button class="button is-primary">Find</button>
+                <button class="button is-primary">Search</button>
+            </div>
+        </div>
+
+        <div class="column is-one-quarter"><!--Add bar-->
+
+            <div class="control">
+                <input class="input" type="text" placeholder="ID number">
             </div>
 
+            <div class="control">
+                <button class="button is-link">Add</button>
+            </div>
         </div>
 
-        <div class="column is-one-quarter"> <!--Mutual Friend List-->
-                <ul class="panel">
-                    <p class="panel-heading">
-                        Mutual Friends
-                    </p>
-                </ul>
-        </div>
+        <div class="column is-one-quarter"><!--Delete bar-->
+            <div class="control">
+                <input class="input" type="text" placeholder="ID number">
+            </div>
 
-    </div>
+            <div class="control">
+                <button class="button is-danger">Delete</button>
+            </div>
+        </div>
+        </ul>
+</div>
+
+</div>
 </div>
 </template>
 

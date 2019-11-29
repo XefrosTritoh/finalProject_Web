@@ -1,5 +1,5 @@
 const express = require('express');
-const profile = require('../models/profiles')
+const { Profile } = require('../models/profiles')
 const friend = require('../models/friends')
 const app = express.Router();
 app.use(express.json());
@@ -7,7 +7,14 @@ app.use(express.json());
 //instance of router
 
  app
-      .get('/' , (req, res) => res.send(profile)) //list of users
+      .get('/' , (req, res) => res.send(profile)) //nothing to update in profile
+      
+      .get('/friend', (req,res) =>{ //returns friends list
+            res.send(Profile.Friend())
+      })
+      .get('/tracker', (req,res) =>{ //returns persons tracks
+            res.send(Profile.Tracker())
+      })
 
       .post('/' , (req, res) => { 
             profile.push(req.query);

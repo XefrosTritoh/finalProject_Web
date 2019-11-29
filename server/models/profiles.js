@@ -1,7 +1,21 @@
-const profile = [
-    {id : 0 , name : "Xefros Tritoh" , location: "Alternia"},
-    {id : 1 , name : "Joey Claire" , location: "Earth"},
-    {id : 2 , name : "Kanaya Maryam" , location: "Alternia"},
-];
+module.exports.Profile = {
+    profile: [
+    { id: 0, name: 'Xefros', location: 'Alternia' },
+    { id: 1, name: 'Joey', location: 'Earth' },
+    { id: 2, name: 'Jude', location: 'Earth' },
+    { id: 3, name: 'Tetrarch', location: 'Alternia' },
+  ],
+  Login(id) {
+    this.Logged_In = this.Profile.indexOf(id).id;
+    if (this.Logged_In === -1) {
+      console.log('Couldnt Find profile');
+      return -1;
+    }
+    return this.Logged_In;
+  },
+  Tracker() {},
+  Friend() {},
 
-module.exports = profile;
+  Logged_In: -1,
+  Recent_Tracks: [],
+};

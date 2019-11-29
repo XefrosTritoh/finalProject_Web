@@ -5,6 +5,7 @@ import Home from '../views/Home.vue';
 import Profile from '../views/Profile.vue';
 import Track from '../views/Tracker.vue';
 import Friend from '../views/Friend.vue';
+import Login from '../views/Login.vue';
 
 
 Vue.use(VueRouter);
@@ -17,6 +18,7 @@ const routes = [
   { path: '/profile', name: 'profile', component: Profile },
   { path: '/tracker', name: 'tracker', component: Track },
   { path: '/friend', name: 'friend', component: Friend },
+  { path: '/login', name: 'login', component: Login },
 
 ];
 

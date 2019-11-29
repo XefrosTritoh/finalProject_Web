@@ -1,18 +1,13 @@
-export const TrackServer = {
-  Tracker: [],
-  Logged_In: -1,
-};
+import api from './my-fetch';
 
-export const TrackClient = {
-  Tracker: [
-    { name: 'Xefros', msg: 'Doing Web programming' },
-    { name: 'Joey', msg: 'Watching Xefros' },
-  ],
-  addToTracker(input) {
-    this.Tracker.push({ name: input.name, msg: input.msg });
+export const TrackServer = {
+  addToTracker() {
+    return api('/addtracker');
+  },
+  removeFromTracker() {
+    return api('/removetracker');
   },
 };
-
 export class Tracker {
   name;
 

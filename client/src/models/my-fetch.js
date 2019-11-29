@@ -1,4 +1,4 @@
-const apiroot = 'http://localhost:3000/game/';
+const api_root = 'http://localhost:3000/game/';
 
 export default async function api(url, data) {
   let response;
@@ -10,11 +10,11 @@ export default async function api(url, data) {
       body: JSON.stringify(data), // body data type must match "Content-Type" header
     });
   } else {
-    response = await fetch(apiroot + url);
+    response = await fetch(api_root + url);
   }
 
-  if (response.ok) {
-    return await response.json();
+  if (!response.ok) {
+    throw response.json();
   } else {
     return response.json();
   }

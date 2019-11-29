@@ -1,6 +1,9 @@
 import api from './my-fetch';
 
 export const TrackServer = {
+  getTracks() {
+    return api('');
+  },
   addToTracker() {
     return api('/addtracker');
   },

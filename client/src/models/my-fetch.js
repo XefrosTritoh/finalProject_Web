@@ -1,5 +1,10 @@
 const apiroot = 'http://localhost:3000/game/';
 
-export default function api(url) {
-  return fetch(apiroot + url).then(x => x.json());
+export default async function api(url) {
+  const response = await fetch(apiroot + url);
+  if (!response.ok) {
+    throw response.json();
+  } else {
+    return response.json();
+  }
 }

@@ -70,6 +70,9 @@ export default {
     Name: '',
     Message: '',
   }),
+  async created() {
+    setInterval(async () => this.posts = await TrackServer.getTracks(), 2500);
+  },
   methods: {
     addData() {
       if (!this.Name || !this.Message) {

@@ -64,14 +64,14 @@ import { TrackServer } from '../models/Tracker';
 
 export default {
   data: () => ({
-    posts: TrackServer,
+    posts: {},
     name: '',
     msg: '',
     Name: '',
     Message: '',
   }),
   async created() {
-    setInterval(async () => this.posts = await TrackServer.getTracks(), 2500);
+    setInterval(async () => this.posts === await TrackServer.getTracks(), 2500);
   },
   methods: {
     addData() {

@@ -2,13 +2,13 @@ import api from './my-fetch';
 
 export const ProfileServer = {
   Login() {
-    return api('login');
+    return api('login-profile');
   },
   Tracker() {
-    return api('tracker');
+    return api('tracker-profile');
   },
   Friend() {
-    return api('friend');
+    return api('friend-profile');
   },
   Logged_In: -1,
   Recent_Tracks: [],

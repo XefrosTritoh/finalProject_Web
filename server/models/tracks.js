@@ -1,5 +1,3 @@
-const { profile } = require('./profiles');
-
 module.exports.Track = {
     Tracker: [
       { name: 'Xefros', msg: 'Doing Web programming' },

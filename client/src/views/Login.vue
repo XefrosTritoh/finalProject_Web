@@ -45,7 +45,7 @@ export default {
   }),
   methods: {
     Input() {
-      ProfileServer.Login();
+      ProfileServer.Login(this.name);
       console.log(this.name);
     },
   },

@@ -27,7 +27,7 @@
                         Recent Tracks from you and your friends
                     </p>
 
-                    <li v-for="(p, i) in posts " :key="i" class="panel-block" >
+                    <li v-for="(p, i) in posts.Tracker " :key="i" class="panel-block" >
                     <span class="panel-icon">
                     <i class="fas" aria-hidden="true"></i>
                     </span>
@@ -64,7 +64,7 @@ import { TrackServer } from '../models/Tracker';
 
 export default {
   data: () => ({
-    posts: {},
+    posts: [],
     name: '',
     msg: '',
     Name: '',

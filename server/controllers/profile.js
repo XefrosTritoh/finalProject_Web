@@ -12,6 +12,18 @@ app.use(express.json());
       .get('/friend', (req,res) =>{ //returns friends list
             res.send(Profile.Friend())
       })
+
+
+      .post('/login-profile', (req,res) =>{ //signs in
+            const id = res.send(Profile.Login(req.body.id))
+
+            if(id == -1){
+                  res.status(500).send({ sucess: false, message: "cannot sign in" })
+            } else {                  res.send({ sucess: true , id: id})
+            }
+      })
+
+
       .get('/tracker', (req,res) =>{ //returns persons tracks
             res.send(Profile.Tracker())
       })

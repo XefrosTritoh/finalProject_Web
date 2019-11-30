@@ -1,8 +1,8 @@
-import api from './my-fetch';
+import api from './my-fetchProfile';
 
 export const ProfileServer = {
-  Login() {
-    return api('login-profile');
+  Login(id) {
+    api('login-profile', id);
   },
   Tracker() {
     return api('tracker-profile');

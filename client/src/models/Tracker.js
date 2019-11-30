@@ -1,11 +1,11 @@
-import api from './my-fetch';
+import api from './my-fetchTracker';
 
 export const TrackServer = {
   getTracks() {
     return api('');
   },
   addToTracker(message) {
-    return api('/add', message);
+    api('add', { message });
   },
 };
 export class Tracker {

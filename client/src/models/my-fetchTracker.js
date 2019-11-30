@@ -19,3 +19,7 @@ export default async function api(url, data) {
     return response.json();
   }
 }
+
+export const User = {
+  User_id: null,
+};

@@ -4,11 +4,8 @@ export const TrackServer = {
   getTracks() {
     return api('');
   },
-  addToTracker() {
-    return api('/addtracker');
-  },
-  removeFromTracker() {
-    return api('/removetracker');
+  addToTracker(message) {
+    return api('/add', message);
   },
 };
 export class Tracker {

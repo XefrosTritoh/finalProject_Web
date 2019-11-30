@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path'); //var path
 const profileController = require('./controllers/profile');
 const friendController = require('./controllers/friend');
 const trackController = require('./controllers/track');
@@ -15,6 +14,7 @@ app.use(function(req, res, next) {
 });
 
 app
+    .use(express.json())
     .get('/port' , (req,res) => res.send("Using Port: " + port))
     .use( '/profile' , profileController )
     .use( '/friend' , friendController )

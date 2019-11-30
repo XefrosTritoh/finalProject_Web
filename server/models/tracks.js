@@ -8,5 +8,7 @@ module.exports.Track = {
     addToTracker(input) {
         this.Tracker.push({ name: input.name, msg: input.msg });
     },
-    removeFromTracker(){},
+    getTracks(){
+      return this.Tracker;
+    },
 }

@@ -27,7 +27,7 @@
                         Recent Tracks from you and your friends
                     </p>
 
-                    <li v-for="(p, i) in posts.Tracker " :key="i" class="panel-block" >
+                    <li v-for="(p, i) in posts " :key="i" class="panel-block" >
                     <span class="panel-icon">
                     <i class="fas" aria-hidden="true"></i>
                     </span>
@@ -81,10 +81,10 @@ export default {
           icon: 'exclamation-circle',
         });
       } else {
-        //  const name = document.getElementById('Name').value;
-        //  const msg = document.getElementById('Message').value;
-        //  const input = { name, msg };
-        TrackServer.addToTracker();
+        const name = document.getElementById('Name').value;
+        const msg = document.getElementById('Message').value;
+        const input = { name, msg };
+        TrackServer.addToTracker(input);
       }
     },
   },

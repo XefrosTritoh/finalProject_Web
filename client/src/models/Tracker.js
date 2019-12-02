@@ -5,7 +5,7 @@ export const TrackServer = {
     return api('');
   },
   addToTracker(message) {
-    api('add', message );
+    return api('add', message );
   },
 };
 export class Tracker {

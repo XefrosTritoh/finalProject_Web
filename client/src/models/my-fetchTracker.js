@@ -1,4 +1,5 @@
 const api_root = "http://localhost:3000/track/";
+import { User } from './my-fetchProfile'
 
 export async function api(url, data){ 
     let response;
@@ -22,8 +23,4 @@ export async function api(url, data){
     else{
         throw await response.json();
     }
-}
-
-export const User = {
-    User_Id: null
 }

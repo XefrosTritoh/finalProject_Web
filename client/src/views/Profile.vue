@@ -34,7 +34,7 @@ export default {
     persona: {},
   }),
   async created() {
-    setInterval(async ()=>  this.persona == await ProfileServer.getProfile(User.User_Id), 2500);
+    setInterval(async ()=>  this.persona = await ProfileServer.getProfile(User.User_Id), 2500);
   },
   methods: {
     },

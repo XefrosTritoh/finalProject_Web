@@ -3,7 +3,7 @@ import $router from "../router/index"
 
 export const ProfileServer = {
   login(id) {
-    api('login', id);
+    api('login', { id } );
 
     //User.User_Id = id;
     //$router.push( {name: 'profile'})

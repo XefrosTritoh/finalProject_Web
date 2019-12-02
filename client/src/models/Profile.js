@@ -1,16 +1,21 @@
-import api from './my-fetchProfile';
+import { api, User } from './my-fetchProfile';
+import $router from "../router/index"
 
 export const ProfileServer = {
-  Login(id) {
-    api('login-profile', id);
+  login(id) {
+    api('login', id);
+
+    //User.User_Id = id;
+    //$router.push( {name: 'profile'})
+    //this.Logged_In = id;
   },
   Tracker() {
-    return api('tracker-profile');
+    return api('tracker');
   },
   Friend() {
-    return api('friend-profile');
+    return api('friend');
   },
-  Logged_In: -1,
+  Logged_In: 0,
   Recent_Tracks: [],
 };
 
@@ -18,8 +23,6 @@ export const ProfileServer = {
 //  Shape of a Profile
 export class Profile {
     id;
-
     name;
-
     location;
 }

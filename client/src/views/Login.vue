@@ -21,9 +21,7 @@
                         </span>
                 </div>
                     <div class="control">
-                        <a class="button is-info" @click.prevent="Input">
-                            Login
-                        </a>
+                        <button @click="Input" class="button is-info is-rounded">Login</button>
                     </div>
                 </div>
                     <p class="help is-danger"></p>
@@ -41,12 +39,18 @@ import { ProfileServer } from '../models/Profile';
 
 export default {
   data: () => ({
-    id: '',
+    id: null,
   }),
   methods: {
     Input() {
-      ProfileServer.Login(this.id);
-      console.log(this.id);
+      if (parseInt(this.id) < 1 || !this.id) {
+        this.$toasted.show('Didnt enter a valid ID number', {
+          duration: 2500,
+          icon: 'exclamation-circle',
+        });
+      } else {
+        ProfileServer.login(this.id);
+      }
     },
   },
 };

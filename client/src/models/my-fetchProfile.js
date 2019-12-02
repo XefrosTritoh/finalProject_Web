@@ -1,25 +1,30 @@
-const apiroot = 'http://localhost:3000/profile/';
+const api_root = "http://localhost:3000/profile/";
 
-export default async function api(url, data) {
-  let response;
-  if (data) {
-    response = await fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
-  } else {
-    response = await fetch(apiroot + url);
-  }
+export async function api(url, data){ 
+    let response;
+    const headers = { authorization: "bearer " + User.User_Id }
 
-  if (!response.ok) {
-    throw response.json();
-  } else {
-    return response.json();
-  }
+    if(data){ 
+        response = await fetch(api_root + url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            headers: { 
+                ...headers,
+                'Content-Type': 'application/json' },
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+      });
+    }else{ 
+        response = await fetch(api_root + url, { headers });
+    }
+
+    if(response.ok)
+        return await response.json();
+    else{
+        throw await response.json();
+    }
 }
 
 export const User = {
-  User_id: null,
-};
+    User_Id: null
+}
+

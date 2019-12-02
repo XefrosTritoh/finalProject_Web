@@ -1,5 +1,5 @@
 const express = require('express');
-const { Profile } = require('../models/profiles')
+const Profile = require('../models/profiles')
 const friend = require('../models/friends')
 const app = express.Router();
 app.use(express.json());
@@ -14,8 +14,8 @@ app.use(express.json());
       })
 
 
-      .post('/login-profile', (req,res) =>{ //signs in
-            const id = res.send(Profile.Login(req.body.id))
+      .post('/login', (req,res) =>{ //signs in
+            const id = Profile.Login(parseInt(req.body.id))
 
             if(id == -1){
                   res.status(500).send({ sucess: false, message: "cannot sign in" })

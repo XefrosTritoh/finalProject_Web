@@ -18,7 +18,7 @@ const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/profile', name: 'profile', component: Profile ,
   beforeEnter: (to,from,next) => {
-    if(User.User_Id == -1 )
+    if(User.User_Id == -1 ||  User.User_Id == null )
     {
       next({name:"login"})
     }else{
@@ -26,8 +26,24 @@ const routes = [
     }
   }},
 
-  { path: '/tracker', name: 'tracker', component: Track },
-  { path: '/friend', name: 'friend', component: Friend },
+  { path: '/tracker', name: 'tracker', component: Track ,
+  beforeEnter: (to,from,next) => {
+    if(User.User_Id == -1 ||  User.User_Id == null )
+    {
+      next({name:"login"})
+    }else{
+      next();
+    }
+  }},
+  { path: '/friend', name: 'friend', component: Friend ,
+  beforeEnter: (to,from,next) => {
+    if(User.User_Id == -1 ||  User.User_Id == null )
+    {
+      next({name:"login"})
+    }else{
+      next();
+    }
+  }},
   { path: '/login', name: 'login', component: Login },
 
 ];

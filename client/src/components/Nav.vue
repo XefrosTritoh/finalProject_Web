@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { User } from '../models/Profile'
+
 export default {
   data() {
     return {

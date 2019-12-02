@@ -14,7 +14,4 @@ module.exports.Profile = {
   getProfile(id) {
     return this.profile[id];
   },
-  Friend() {},
-
-  Recent_Tracks: [],
 };

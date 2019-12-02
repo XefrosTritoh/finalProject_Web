@@ -13,16 +13,6 @@
 
         </div>
 
-    <div class="column is-one-quarter">
-        <div class="column">
-            <ul class="panel">
-                <p class="panel-heading">
-                    Recent Post
-                </p>
-            </ul>
-        </div>
-    </div>
-
         <div class="column is-one-quarter">
           <a class="button is-info" a href="/tracker">See what others are saying </a>
         </div>

@@ -7,12 +7,6 @@ export const ProfileServer = {
     User.User_Id = id;
     $router.push( {name: 'profile'})
   },
-  Tracker() {
-    return api('tracker');
-  },
-  Friend() {
-    return api('friend');
-  },
   getProfile(id) {
     return api('getprofile' , { id });
   },

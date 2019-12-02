@@ -71,7 +71,8 @@ export default {
     Message: '',
   }),
   async created() {
-    setInterval(async () => this.posts === await TrackServer.getTracks(), 2500);
+    setInterval(async ()=>  this.posts = await TrackServer.getTracks(), 2500);
+    console.log(posts);
   },
   methods: {
     addData() {

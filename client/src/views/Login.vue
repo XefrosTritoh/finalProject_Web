@@ -12,7 +12,7 @@
                 <div class="panel-block">
                 <div class="field has-addons">
                 <div class="control has-icons-left has-icons-right">
-                    <input v-model="name" class="input" type="text" placeholder="Your ID">
+                    <input v-model="id" class="input" type="text" placeholder="Your ID">
                         <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                         </span>
@@ -41,12 +41,12 @@ import { ProfileServer } from '../models/Profile';
 
 export default {
   data: () => ({
-    name: '',
+    id: '',
   }),
   methods: {
     Input() {
-      ProfileServer.Login(this.name);
-      console.log(this.name);
+      ProfileServer.Login(this.id);
+      console.log(this.id);
     },
   },
 };

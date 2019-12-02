@@ -7,7 +7,7 @@ module.exports.Profile = {
   ],
   Login(id) {
     this.Logged_In = this.Profile.indexOf(id).id;
-    if (this.Logged_In === -1) {
+    if (this.Logged_In == -1) {
       return -1;
     }
     return this.Logged_In;

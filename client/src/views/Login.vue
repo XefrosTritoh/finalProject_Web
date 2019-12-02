@@ -43,7 +43,7 @@ export default {
   }),
   methods: {
     Input() {
-      if (parseInt(this.id) < 1 || !this.id) {
+      if (parseInt(this.id) < 0 || !this.id) {
         this.$toasted.show('Didnt enter a valid ID number', {
           duration: 2500,
           icon: 'exclamation-circle',

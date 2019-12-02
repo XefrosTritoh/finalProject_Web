@@ -15,9 +15,9 @@ app.use(express.json());
 
 
       .post('/login', (req,res) =>{ //signs in
-            const id = Profile.Login(parseInt(req.body.id))
+            const id = Profile.Login(req.body.id)
 
-            if(id == 0){
+            if(id == -1){
                   res.status(500).send({ sucess: false, message: "cannot sign in" })
             } else {                  res.send({ sucess: true , id: id})
             }

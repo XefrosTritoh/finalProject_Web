@@ -4,10 +4,8 @@ import $router from "../router/index"
 export const ProfileServer = {
   login(id) {
     api('login', { id } );
-
-    //User.User_Id = id;
-    //$router.push( {name: 'profile'})
-    //this.Logged_In = id;
+    User.User_Id = id;
+    $router.push( {name: 'profile'})
   },
   Tracker() {
     return api('tracker');
@@ -15,7 +13,6 @@ export const ProfileServer = {
   Friend() {
     return api('friend');
   },
-  Logged_In: 0,
   Recent_Tracks: [],
 };
 

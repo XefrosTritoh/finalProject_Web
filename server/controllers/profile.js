@@ -1,13 +1,12 @@
 const express = require('express');
 const { Profile } = require('../models/profiles')
-const friend = require('../models/friends')
 const app = express.Router();
 app.use(express.json());
 
 //instance of router
 
  app
-      .get('/' , (req, res) => res.send(profile)) //nothing to update in profile
+      .post('/getprofile' , (req, res) => res.send(Profile.getProfile(req.body.id))) //nothing to update in profile
       
       .get('/friend', (req,res) =>{ //returns friends list
             res.send(Profile.Friend())

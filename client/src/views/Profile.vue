@@ -2,26 +2,14 @@
 <div>
 
 <h1 class="is-size-1">
-    Your Profile
+    Welcome {{this.persona.name}}
 </h1>
 
     <div class="columns">
 
         <div class="column is-one-quarter">
 
-            <ul class="panel">
-                <p class="panel-heading">
-                    Profile
-                </p>
-            </ul>
-
-            <ul class="panel">
-                <p class="panel-heading">
-                    Friends List
-                </p>
-
-                <a href="/friend"><p>View friend list</p></a>
-            </ul>
+          <a class="button is-primary" a href="/friend">View Friend list</a>
 
         </div>
 
@@ -29,48 +17,39 @@
         <div class="column">
             <ul class="panel">
                 <p class="panel-heading">
-                    Recent Tracks
+                    Recent Post
                 </p>
-                <a href="/tracker"><p>View Tracker list</p></a>
             </ul>
         </div>
     </div>
 
-
- <div class="column is-one-quarter">
-    <article class="media">
-
-      <figure class="media-left">
-        <p class="image is-64x64">
-          <img src="">
-        </p>
-      </figure>
-
-      <div class="media-content">
-
-      <div class="field">
-      <p class="control">
-        <textarea class="textarea" placeholder="Anything New?"></textarea>
-      </p>
-      </div>
-
-      <nav class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <a class="button is-info">Add track</a>
-          </div>
+        <div class="column is-one-quarter">
+          <a class="button is-info" a href="/tracker">See what others are saying </a>
         </div>
-      </nav>
 
-      </div>
-  </article>
-  </div>
+
+
+
 
   </div>
 </div>
 </template>
 
 <script>
+import { ProfileServer } from '../models/Profile';
+import { User } from '../models/my-fetchProfile';
+
+export default {
+  data: () => ({
+    persona: {},
+  }),
+  async created() {
+    setInterval(async ()=>  this.persona == await ProfileServer.getProfile(User.User_Id), 2500);
+  },
+  methods: {
+    },
+
+};
 </script>
 
 <style>

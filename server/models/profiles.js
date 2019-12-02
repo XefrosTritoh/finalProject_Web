@@ -11,7 +11,9 @@ module.exports.Profile = {
     }
     return ID;
   },
-  Tracker() {},
+  getProfile(id) {
+    return this.profile[id];
+  },
   Friend() {},
 
   Recent_Tracks: [],

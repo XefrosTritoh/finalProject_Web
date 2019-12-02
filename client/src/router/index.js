@@ -18,7 +18,7 @@ const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/profile', name: 'profile', component: Profile ,
   beforeEnter: (to,from,next) => {
-    if(User.User_Id == 0)
+    if(User.User_Id == -1 )
     {
       next({name:"login"})
     }else{

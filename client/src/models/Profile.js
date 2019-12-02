@@ -13,7 +13,9 @@ export const ProfileServer = {
   Friend() {
     return api('friend');
   },
-  Recent_Tracks: [],
+  getProfile(id) {
+    return api('getprofile' , { id });
+  },
 };
 
 

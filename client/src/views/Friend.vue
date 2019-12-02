@@ -9,15 +9,9 @@
 
         <div class="column is-one-quarter">
 
-            <ul class="panel">
                 <p class="panel-heading">
                     Currently signed in as..
                 </p>
-
-            <figure class="image is-128x128">
-                <img src="">
-            </figure>
-            </ul>
         </div>
 
         <div class="column is-one-quarter"><!--Current Friend List-->

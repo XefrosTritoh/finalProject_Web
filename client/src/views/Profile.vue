@@ -9,15 +9,15 @@
 
         <div class="column is-one-quarter">
 
-          <a class="button is-primary" a href="/friend">View Friend list</a>
-
+         <router-link exact-active-class="active" class="button is-primary" to="/friend">
+            <i class="fa fa-users fa-pull-left"></i>
+            Go to Friends list
+        </router-link>
+                <router-link exact-active-class="active" class="button is-link" to="/tracker">
+            <i class="fa fa-compass fa-pull-left"></i>
+            See What other people are saying
+        </router-link>
         </div>
-
-        <div class="column is-one-quarter">
-          <a class="button is-info" a href="/tracker">See what others are saying </a>
-        </div>
-
-
 
 
 

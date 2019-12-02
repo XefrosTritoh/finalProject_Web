@@ -11,12 +11,8 @@
 
             <ul class="panel">
                 <p class="panel-heading">
-                    Currently signed in as..
+                    Currently signed in as {{this.persona.name}}
                 </p>
-
-            <figure class="image is-128x128">
-                <img src="">
-            </figure>
             </ul>
         </div>
 
@@ -24,7 +20,7 @@
             <div class="column">
                 <ul class="panel">
                     <p class="panel-heading">
-                        Recent Tracks
+                        Recent
                     </p>
 
                     <li v-for="(p, i) in posts " :key="i" class="panel-block" >
@@ -42,8 +38,7 @@
         <div class="column is-one-quarter"><!--Search bar-->
 
         <div class="control">
-            <p>Name:</p>
-        <input class="input is-rounded" type="text" v-model="Name" id="Name" required/>
+            <p>Name: {{this.persona.name}} </p>
         </div>
 
         <div class="control">
@@ -61,25 +56,28 @@
 
 <script>
 import { TrackServer } from '../models/Tracker';
+import { User } from '../models/my-fetchProfile'
+import { ProfileServer } from '../models/Profile';
 
 export default {
   data: () => ({
     posts: [],
-    Name: '',
+    persona: {},
     Message: '',
   }),
   async created() {
     setInterval(async ()=>  this.posts = await TrackServer.getTracks(), 2500);
+    setInterval(async ()=>  this.persona = await ProfileServer.getProfile(User.User_Id), 2500);
   },
   methods: {
     addData() {
-      if (!this.Name || !this.Message) {
-        this.$toasted.show('Didnt enter a Name and a Message', {
+      if (!this.Message) {
+        this.$toasted.show('Didnt enter a Message', {
           duration: 2500,
           icon: 'exclamation-circle',
         });
       } else {
-        const input = { name: this.Name, msg: this.Message };
+        const input = { name: this.persona.name, msg: this.Message };
         TrackServer.addToTracker(input);
       }
     },

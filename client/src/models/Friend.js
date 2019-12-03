@@ -9,10 +9,10 @@ Find(idf){
     return api('/find' , { idf })
 },
 Add(id,idf){
-    return api('/add', { id } , { idf })
+    return api('/add', { id , idf })
 },
 Delete(id,idf){
-    return api('/delete', { id } , { idf } )
+    return api('/delete', { id , idf } )
 },
 }; 
 

@@ -1,23 +1,24 @@
-import api from './my-fetch';
+import { api }  from './my-fetchFriend';
 
 export const FriendServer = {
   
-Find(){
-    return api('/find')
+Get(id){
+    return api('' , { id })
 },
-Add(){
-    return api('/add')
+Find(idf){
+    return api('/find' , { idf })
 },
-Delete(){
-    return api('/delete')
+Add(id,idf){
+    return api('/add', { id } , { idf })
+},
+Delete(id,idf){
+    return api('/delete', { id } , { idf } )
 },
 }; 
 
 
 export class Friend {
     id;
-
     friendId = [];
-
     friendName;
 }

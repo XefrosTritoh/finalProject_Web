@@ -1,4 +1,4 @@
-const apiroot = 'http://localhost:3000/friend/';
+const api_root = 'http://localhost:3000/friend/';
 import { User } from './my-fetchProfile'
 
 export async function api(url, data){ 

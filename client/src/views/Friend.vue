@@ -80,10 +80,12 @@ import { ProfileServer } from '../models/Profile';
 export default {
   data: () => ({
     list: [],
+    notif: {},
     persona: {},
     idfSearch: null,
     idfAdd: null,
     idfDel: null,
+    error: ""
   }),
   async created() {
     setInterval(async ()=>  this.persona = await ProfileServer.getProfile(User.User_Id), 2500);
@@ -91,18 +93,24 @@ export default {
   },
   methods: {
 
-    find() {
-      if (!this.idfSearch) {
+    async find() {
+      if (!this.idfSearch) 
+      {
         this.$toasted.show('Didnt enter a FriendID', {
           duration: 2500,
-          icon: 'exclamation-circle',
-        });
-      } else {
-          var message = FriendServer.Find(this.idfSearch).name;
-          this.$toasted.show(message, {
+          icon: 'exclamation-circle',});
+      } 
+      else 
+      {
+        this.notif = await FriendServer.Find(this.idfSearch) .catch(err=> {
+                                                                this.error = err.message; });
+        if(this.error == "")
+        {
+          this.$toasted.show(this.notif.name , {
           duration: 2500,
-          icon: 'exclamation-circle'
-      })}
+          icon: 'exclamation-circle'})
+        }
+      }
     },
 
     add() {
@@ -130,5 +138,7 @@ export default {
 };
 </script>
 
-<style>
+
+<style lang="scss">
 </style>
+

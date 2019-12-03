@@ -14,7 +14,7 @@ const app = express.Router();
             if(flag == -1)
                   res.status(409).send({ sucess: false, name: "Person doesnt exist"})
             else  
-                  res.send({ sucess: true , name: `Users name is ${flag}` })
+                  res.send({ sucess: true , name: `User: ${flag}` })
       })
 
 

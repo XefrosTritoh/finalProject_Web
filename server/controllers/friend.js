@@ -23,7 +23,11 @@ const app = express.Router();
             const flag = Friend.Add(req.body.id,req.body.idf)
 
             if(flag == -1)
-            res.status(409).send({ sucess: false, msg: "Failed to add"})
+            res.status(409).send({ sucess: false, msg: "Out of Range or Is User ID"})
+            else if(flag == -2)
+            {
+            res.status(409).send({ sucess: false, msg: "You two are friends Already"})
+            }
 
             else  
                   res.send({ sucess: true , msg: "You two are now friends"})
@@ -35,7 +39,11 @@ const app = express.Router();
             const flag = Friend.Delete(req.body.id,req.body.idf)
 
             if(flag == -1)
-            res.status(409).send({ sucess: false, msg: "Failed to Delete"})
+            res.status(409).send({ sucess: false, msg: "Out of Range or Is User ID"})
+            else if(flag == -2)
+            {
+            res.status(409).send({ sucess: false, msg: "Cannot Delete, Server error"})
+            }
 
             else  
                   res.send({ sucess: true , msg: "You two are now not friends"})

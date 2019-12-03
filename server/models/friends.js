@@ -26,7 +26,7 @@ module.exports.Friend = {
 
         if(this.friends[user].list.length > 0 && this.friends[user].list.find(x => x.name == friendName ))
         {
-            return -1; //already friends
+            return -2; //already friends
         }
         else{
             this.friends[user].list.push({id: friendId, name:friendName}); //adds from user
@@ -47,7 +47,7 @@ module.exports.Friend = {
             this.friends[user].list.splice(index, 1); //removes from user
         }
         else{
-         return -1;
+         return -2;
         }
 
         this.friends[friendId].list.find(x => x.name == Profile.profile[user].name )

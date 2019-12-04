@@ -2,9 +2,6 @@ import { api, User } from './my-fetchProfile';
 import $router from "../router/index"
 
 export const ProfileServer = {
-  sign(name){
-    return api('sign', { name });
-  },
   login(id) {
     api('login', { id } );
     User.User_Id = id;

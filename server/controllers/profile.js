@@ -8,11 +8,6 @@ app.use(express.json());
  app
       .post('/getprofile' , (req, res) => res.send(Profile.getProfile(req.body.id))) //nothing to update in profile
 
-      .post('/sign', (req,res) =>{ //signs in
-            const id = Profile.SignUp(req.body.name)
-            res.send({ sucess: true , id: id})
-      })
-
       .post('/login', (req,res) =>{ //signs in
             const id = Profile.Login(req.body.id)
 

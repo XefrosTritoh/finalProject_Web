@@ -6,7 +6,6 @@ import Profile from '../views/Profile.vue';
 import Track from '../views/Tracker.vue';
 import Friend from '../views/Friend.vue';
 import Login from '../views/Login.vue';
-import SignUp from '../views/SignUp.vue';
 import { User } from '../models/my-fetchProfile';
 
 
@@ -46,7 +45,6 @@ const routes = [
     }
   }},
   { path: '/login', name: 'login', component: Login },
-  { path: '/sign', name: 'sign', component: SignUp },
 
 ];
 

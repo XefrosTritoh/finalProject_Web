@@ -8,18 +8,18 @@ module.exports.Friend = {
     {list:  [] }
     ],
 
-    getFriends(user){
+    getFriends(user){ //works
         return this.friends[user].list
     },
-    Find(friendId){
-        if(friendId < Profile.profile.length && friendId > -1)
-            return Profile.profile[friendId].name; //user exists
+    Find(friendId){ //not working ( .profile of undefined )
+        if(friendId < this.friends.length && friendId > -1)
+        return Profile.profile[friendId].name; //user exists(undefined error with .profile)
 
         else return -1; //DNE 
     },
     Add(user, friendId){
-        if( (friendId < Profile.profile.length && friendId > -1) && user != friendId)
-            var friendName = Profile.profile[friendId].name
+        if( (friendId < this.friends.length && friendId > -1) && user != friendId)
+            var friendName = Profile.profile[friendId].name //user exists(undefined error with .profile)
         else return -1; //DNE or yourself
 
 

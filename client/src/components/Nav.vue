@@ -24,6 +24,9 @@
             <a class="button is-light" href="/login">
                 Log in
             </a>
+            <a class="button is-light" href="/sign">
+                Sign up
+            </a>
             </div>
         </div>
     </div>

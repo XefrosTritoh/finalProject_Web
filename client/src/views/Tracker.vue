@@ -35,7 +35,7 @@
         </div>
 
 
-        <div class="column is-one-quarter"><!--Search bar-->
+        <div class="column is-one-quarter"><!--Add bar-->
 
         <div class="control">
             <p>Name: {{this.persona.name}} </p>
@@ -43,16 +43,26 @@
 
         <div class="control">
             <p>Message:</p>
-        <input class="input is-rounded" type="text" v-model="Message" id="Message">
+        <input class="input is-rounded" v-model="Message"  type="text" id="Message">
         </div>
 
             <div class="column is-one-quarter">
                 <button @click="addData" class="button is-info is-rounded">Add</button>
             </div>
         </div>
+
+
+
+        <div class="column is-one-quarter">
+        <p>Find a recent message by name</p>
+        <v-select :options="['Xefros' , 'Joey', 'Jude', 'Tetrarch']" v-model="input" @input="getData"></v-select>
+        <p> {{last.input}} </p>
+        </div>
+
     </div>
 </div>
 </template>
+
 
 <script>
 import { TrackServer } from '../models/Tracker';
@@ -63,7 +73,9 @@ export default {
   data: () => ({
     posts: [],
     persona: {},
+    last: {},
     Message: '',
+    input: '',
   }),
   async created() {
     setInterval(async ()=>  this.posts = await TrackServer.getTracks(), 2500);
@@ -81,8 +93,10 @@ export default {
         TrackServer.addToTracker(input);
       }
     },
+    async getData(){
+      this.last = await TrackServer.getTracksDy(this.input)
+    }
   },
-
 };
 </script>
 
